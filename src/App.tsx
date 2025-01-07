@@ -1,4 +1,5 @@
  import { useState, useEffect, useRef } from "react";
+ const url = 'https://reqres.in/api/users/2';
 // export default function App() {
 //     const [day, setDay] = useState("Monday");
 //     const prevDay = usePrevious(day);
@@ -93,6 +94,11 @@
 export default function App() {
     const [userName, setUserName] = useState<string>('');
     const uname = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setUserName(data.data.first_name))
+    }, [])
 
    
     return(
