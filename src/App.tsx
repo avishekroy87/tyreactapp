@@ -1,5 +1,6 @@
  import { useState, useEffect, useRef } from "react";
  const url = 'https://reqres.in/api/users/2';
+ import Factorial from "./components/Factorial";
 // export default function App() {
 //     const [day, setDay] = useState("Monday");
 //     const prevDay = usePrevious(day);
@@ -106,6 +107,7 @@ export default function App() {
             {userName && <h1>Hello {userName}</h1>}
             <input type="text" placeholder="Enter your name" ref={uname}/>
             <button onClick={() => setUserName(uname.current?.value || '')}>Submit</button>
+            <Factorial />
         </div>
     )
 }
